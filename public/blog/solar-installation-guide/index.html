@@ -63,7 +63,7 @@
       margin-bottom: 20px;
       text-align: justify;
     }
-    ul, ol {
+    ul {
       margin-bottom: 25px;
       padding-left: 20px;
     }
@@ -145,7 +145,7 @@
     <ul>
       <li><strong>Roof Orientation & Pitch:</strong> In the northern hemisphere, true southern-facing roof exposures capture the highest volume of solar radiation throughout the day. A pitch angle between 30 and 45 degrees is typically considered ideal for residential arrays.</li>
       <li><strong>Shading and Obstructions:</strong> Even minor partial shading from nearby trees, chimneys, or neighboring commercial properties can drop an array's power production by up to 50%. Conducting a comprehensive shade analyze using professional mapping tools is vital.</li>
-      <li><strong>Structural Capacity:</strong> Solar panels and mounting hardware add significant weight to your roof framework. If your roof architecture is over 15 to 20 years old, it is generally recommended to execute structural reinforcements or total replacements before installation.</li>
+      <li><strong>Structural Capacity:</strong> Solar panels and housing hardware add significant weight to your roof framework. If your roof architecture is over 15 to 20 years old, it is generally recommended to execute structural reinforcements or total replacements before installation.</li>
     </ul>
 
     <h2>2. System Engineering and Load Analysis</h2>
@@ -156,25 +156,18 @@
       <strong>Pro Tip:</strong> Grid-tied setups are the most popular choices for modern residential homes. They allow you to draw grid power seamlessly during extended overcast cycles while feeding surplus power back into the utility framework during high-generation hours.
     </div>
 
-    <h2>3. Navigating Permitting, Interconnection, and Policies</h2>
-    <p>The administrative phase of clean energy deployment can be intricate. Local municipalities require building permits to verify engineering compliance, while electrical utility companies enforce strict interconnection regulations before granting "Permission to Operate" (PTO).</p>
-    <ol>
-      <li><strong>Zoning Approvals:</strong> Homeowners associations (HOAs) and local municipal planning bodies often have clear zoning constraints regarding array height, placement, and visual impact.</li>
-      <li><strong>Net Metering Programs:</strong> Ensure you evaluate your regional utility framework's net metering policies. These structures determine how much financial credit you receive when your system pushes excess power distribution back into the public grid grid lines.</li>
-    </ol>
-
-    <!-- 🎯 Bulletproof Natural Router Button Grid -->
+    <!-- 🎯 Secure Direct Integration Router Section -->
     <div class="router-section">
       <p>Compare Certified Solar Programs & Setup Providers Available In Your Region:</p>
       <div class="btn-container">
         
-        <!-- Button 1: Main Route (⚠️ 'https://cloudflare.com' ko mita kar apni parked domain 123.com laga lena) -->
-        <a href="https://cloudflare.com" class="action-button targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+        <!-- Button 1: Main Route (⚠️ 'https://cloudflare.com' ko mita kar apni real parked domain 123.com laga lena) -->
+        <a href="https://cloudflare.com" class="action-button targetRouterLink">
           View Active Solar Incentives
         </a>
         
         <!-- Button 2: Secondary Route -->
-        <a href="https://cloudflare.com" class="action-button btn-secondary targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+        <a href="https://cloudflare.com" class="action-button btn-secondary targetRouterLink">
           Get Free Installation Quotes
         </a>
         
@@ -182,15 +175,39 @@
     </div>
   </div>
 
+  <!-- 🚀 Dynamic Multi-Device Timer Delay Script -->
   <script>
-    // Pure memory cleanup before anchor switch triggers
     const routerLinks = document.querySelectorAll('.targetRouterLink');
+    
     routerLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const destinationUrl = this.getAttribute('href');
+        
         try {
           window.localStorage.clear();
           window.sessionStorage.clear();
         } catch(error) {}
+        
+        const originalText = this.innerText;
+        this.innerText = "Securing Connection... Please wait";
+        this.style.opacity = "0.7";
+        this.style.pointerEvents = "none";
+        
+        // 3.5 Seconds Hold for Timing Reset Automation
+        setTimeout(function() {
+          const secureWindow = window.open(destinationUrl, '_blank', 'noreferrer,noopener');
+          if (secureWindow) {
+            secureWindow.opener = null;
+          } else {
+            window.location.replace(destinationUrl);
+          }
+          
+          link.innerText = originalText;
+          link.style.opacity = "1";
+          link.style.pointerEvents = "auto";
+        }, 3500);
       });
     });
   </script>
