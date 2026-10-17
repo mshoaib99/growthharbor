@@ -173,24 +173,18 @@
       </tbody>
     </table>
 
-    <h2>3. Installation Complexity and Roofing Logistics</h2>
-    <p>Labor charges are deeply dictated by the physical state and shape of your property's roof. Flat, straightforward roof installations are simple and fast to mount safely. Conversely, homes with multi-tiered profiles, steep roof pitches, or specific Spanish clay tiles require advanced mounting tracks and specialized safety infrastructure, increasing manual construction overheads.</p>
-
-    <h2>4. Tax Credits, Subsidies, and Local Rebates</h2>
-    <p>Net deployment costs are heavily softened by government programs designed to accelerate sustainable infrastructure growth. In the United States, programs like the Federal Residential Clean Energy Credit allow homeowners to deduct 30% of their total installation expenses directly from their tax liabilities. Combining these federal incentives with municipal utility rebates can reduce total capital stress by thousands of dollars.</p>
-
     <!-- 🎯 Bulletproof Natural Router Button Grid -->
     <div class="router-section">
       <p>Compare Solar Financing Strategies & Live System Cost Calculators:</p>
       <div class="btn-container">
         
         <!-- Button 1: Main Route (⚠️ 'https://cloudflare.com' ko mita kar apni parked domain 123.com laga lena) -->
-        <a href="https://cloudflare.com" class="action-button targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+        <a href="https://cloudflare.com" class="action-button targetRouterLink">
           Calculate Installation Savings
         </a>
         
         <!-- Button 2: Secondary Route -->
-        <a href="https://cloudflare.com" class="action-button btn-secondary targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+        <a href="https://cloudflare.com" class="action-button btn-secondary targetRouterLink">
           Compare Regional Solar Rates
         </a>
         
@@ -198,15 +192,39 @@
     </div>
   </div>
 
+  <!-- 🚀 Dynamic Multi-Device Timer Delay Script -->
   <script>
-    // Pure memory cleanup before anchor switch triggers
     const routerLinks = document.querySelectorAll('.targetRouterLink');
+    
     routerLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const destinationUrl = this.getAttribute('href');
+        
         try {
           window.localStorage.clear();
           window.sessionStorage.clear();
         } catch(error) {}
+        
+        const originalText = this.innerText;
+        this.innerText = "Securing Connection... Please wait";
+        this.style.opacity = "0.7";
+        this.style.pointerEvents = "none";
+        
+        // 3.5 Seconds Hold for Timing Reset Automation
+        setTimeout(function() {
+          const secureWindow = window.open(destinationUrl, '_blank', 'noreferrer,noopener');
+          if (secureWindow) {
+            secureWindow.opener = null;
+          } else {
+            window.location.replace(destinationUrl);
+          }
+          
+          link.innerText = originalText;
+          link.style.opacity = "1";
+          link.style.pointerEvents = "auto";
+        }, 3500);
       });
     });
   </script>
