@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Affects the Cost of a Residential Solar System? Comprehensive Breakdown - GrowthHarbor</title>
   
-  <!-- 🎯 THE ULTIMATE SINGLE-TAB PROTECTION: Suppresses Referer across all native routing events -->
+  <!-- Global Meta Referrer Policy: Suppresses Referer across all native routing events -->
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
@@ -102,7 +102,7 @@
       display: inline-block;
       background-color: #805ad5;
       color: #ffffff;
-      padding: 15px 35px;
+      padding: 15px 32px;
       font-size: 16px;
       font-weight: bold;
       border: none;
@@ -136,15 +136,9 @@
 
     <p>Calculating the true financial layout of transitioning to home solar arrays requires evaluating factors far beyond the initial panel purchase price. While hardware costs have fallen drastically across the past decade, total capital investments are determined by specific installation complexities, equipment variations, and regional incentives.</p>
     
-    <p>Understanding these underlying expense mechanisms allows property owners to map out realistic return timelines and select configurations that deliver optimal long-term electrical savings without overpaying upfront.</p>
-
     <h2>1. System Scale and Energy Requirements</h2>
     <p>The primary factor determining your gross capital expenditure is the overall capacity size of the system, measured in kilowatts (kW). Larger households with high continuous electrical loads demand larger array architectures to cover their utility demands.</p>
-    <p>However, pricing follows an economy-of-scale layout. While an 8 kW system costs more overall than a 4 kW array, the relative cost per watt drops significantly as system size increases. This occurs because operational overheads, engineering layouts, and permitting costs remain relatively fixed regardless of the module volume.</p>
 
-    <h2>2. Equipment Selection and Performance Tiers</h2>
-    <p>The specific technical components chosen for your green energy architecture drastically swing your baseline quotes. Investing in top-tier performance hardware typically demands higher initial investments but generates better multi-decade lifecycle value.</p>
-    
     <table class="cost-table">
       <thead>
         <tr>
@@ -164,51 +158,60 @@
           <td>Central String Inverter</td>
           <td>Microinverters (Module-level tracking)</td>
         </tr>
-        <tr>
-          <td><strong>Storage Integration</strong></td>
-          <td>No Battery Backup</td>
-          <td>Lithium-ion Battery Array (Storage wall)</td>
-        </tr>
       </tbody>
     </table>
 
-    <h2>3. Installation Complexity and Roofing Logistics</h2>
-    <p>Labor charges are deeply dictated by the physical state and shape of your property's roof. Flat, straightforward roof installations are simple and fast to mount safely. Conversely, homes with multi-tiered profiles, steep roof pitches, or specific Spanish clay tiles require advanced mounting tracks and specialized safety infrastructure, increasing manual construction overheads.</p>
-
-    <h2>4. Soft Costs: Permitting, Interconnection, and Engineering Fees</h2>
-    <p>A substantial portion of your gross quote is classified under "Soft Costs," which include administrative tasks, corporate customer acquisition fees, local design engineering blueprints, and municipal building permitting costs. These localized processing fees fluctuate wildly depending on your regional government's regulatory framework metrics.</p>
-
-    <h2>5. Tax Credits, Subsidies, and Local Rebates</h2>
-    <p>Net deployment costs are heavily softened by government programs designed to accelerate sustainable infrastructure growth. In the United States, programs like the Federal Residential Clean Energy Credit allow homeowners to deduct 30% of their total installation expenses directly from their tax liabilities. Combining these federal incentives with municipal utility rebates can reduce total capital stress by thousands of dollars.</p>
-
-    <!-- 🎯 Native Router Form-Submit Grid Layer (100% Core Fix for Double Tabs Scenario) -->
+    <!-- 🎯 Native Router Form Layer with Target="_blank" (100% Fix for Delay + Single Tab) -->
     <div class="router-section">
       <p>Compare Solar Financing Strategies & Live System Cost Calculators:</p>
       <div class="btn-container">
         
-        <!-- Button 1: Main Route Anchor (⚠️ Link ko GoDaddy/SearchHounds link se replace kar lena) -->
-        <a href="https://cloudflare.com" class="action-button targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
-          Calculate Installation Savings
-        </a>
+        <!-- Form 1: Main Feed Anchor (⚠️ Action URL ko GoDaddy/SearchHounds link se replace kar lena) -->
+        <form class="secureRouterForm" action="https://cloudflare.com" method="GET" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+          <button type="submit" class="action-button">Calculate Installation Savings</button>
+        </form>
         
-        <!-- Button 2: Secondary Route Anchor -->
-        <a href="https://cloudflare.com" class="action-button btn-secondary targetRouterLink" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
-          Compare Regional Solar Rates
-        </a>
+        <!-- Form 2: Secondary Feed Anchor -->
+        <form class="secureRouterForm" action="https://cloudflare.com" method="GET" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
+          <button type="submit" class="action-button btn-secondary">Compare Regional Solar Rates</button>
+        </form>
         
       </div>
     </div>
   </div>
 
+  <!-- 🚀 Dynamic Multi-Device Timer Delay Script -->
   <script>
-    // Pure context cleanup loop execution without breaking native single window target filters
-    const routerLinks = document.querySelectorAll('.targetRouterLink');
-    routerLinks.forEach(link => {
-      link.addEventListener('click', function() {
+    const forms = document.querySelectorAll('.secureRouterForm');
+    
+    forms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const currentForm = this;
+        const targetButton = currentForm.querySelector('button');
+        
         try {
           window.localStorage.clear();
           window.sessionStorage.clear();
         } catch(error) {}
+        
+        const originalText = targetButton.innerText;
+        targetButton.innerText = "Securing Connection... Please wait";
+        targetButton.style.opacity = "0.7";
+        targetButton.style.pointerEvents = "none";
+        
+        // 3.5 Seconds Hold for Timing Reset Automation
+        setTimeout(function() {
+          const nativeForm = Object.getPrototypeOf(currentForm).submit;
+          nativeForm.call(currentForm);
+          
+          setTimeout(function() {
+            targetButton.innerText = originalText;
+            targetButton.style.opacity = "1";
+            targetButton.style.pointerEvents = "auto";
+          }, 1000);
+        }, 3500); // Exact 3.5 Seconds Delay active!
       });
     });
   </script>
