@@ -92,8 +92,9 @@
       text-align: center;
       font-size: 19px;
     }
+    /* Buttons container initially hidden */
     .btn-container {
-      display: flex;
+      display: none; 
       gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
@@ -195,10 +196,11 @@
 
     <p>Routine maintenance primarily involves periodic cleaning to remove dust, pollen, or bird droppings, alongside real-time monitoring via software apps to catch inverter alerts promptly. Factoring in potential mid-life component replacements, such as string inverters around year 12-15, ensures clear financial planning for the entire life cycle of your solar system.</p>
 
-    <!-- BHW Professional Secure Routing Layer -->
+    <!-- Professional 4 Buttons Routing Layer with 4.5 Seconds Delay -->
     <div class="router-section">
-      <p>Compare Solar Financing Strategies & Live System Cost Calculators:</p>
-      <div class="btn-container">
+      <p id="loadingStatus">Verifying secure connection & loading calculations...</p>
+      
+      <div class="btn-container" id="targetButtonsContainer">
         
         <!-- Button 1 -->
         <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button">
@@ -209,10 +211,37 @@
         <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button btn-secondary">
           Compare Regional Solar Rates
         </a>
+
+        <!-- Button 3 -->
+        <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button">
+          Check Government Tax Credits
+        </a>
+
+        <!-- Button 4 -->
+        <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button btn-secondary">
+          Get Instant Contractor Quote
+        </a>
         
       </div>
     </div>
   </div>
+
+  <!-- Script to show 4 buttons after 4.5 seconds -->
+  <script>
+    setTimeout(function() {
+      // Hide the loading text
+      const statusText = document.getElementById('loadingStatus');
+      if(statusText) {
+        statusText.style.display = 'none';
+      }
+      
+      // Display the 4 buttons smoothly
+      const btnContainer = document.getElementById('targetButtonsContainer');
+      if(btnContainer) {
+        btnContainer.style.display = 'flex';
+      }
+    }, 4500); // 4.5 seconds delay
+  </script>
 
 </body>
 </html>
