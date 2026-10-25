@@ -195,60 +195,24 @@
 
     <p>Routine maintenance primarily involves periodic cleaning to remove dust, pollen, or bird droppings, alongside real-time monitoring via software apps to catch inverter alerts promptly. Factoring in potential mid-life component replacements, such as string inverters around year 12-15, ensures clear financial planning for the entire life cycle of your solar system.</p>
 
-    <!-- 🎯 Native Router Form Layer with Target="_blank" (100% Fix for Delay + Single Tab) -->
+    <!-- BHW Professional Secure Routing Layer -->
     <div class="router-section">
       <p>Compare Solar Financing Strategies & Live System Cost Calculators:</p>
       <div class="btn-container">
         
-        <!-- Form 1: Main Feed Anchor -->
-        <form class="secureRouterForm" action="http://cloudflare.com" method="GET" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
-          <button type="submit" class="action-button">Calculate Installation Savings</button>
-        </form>
+        <!-- Button 1 -->
+        <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button">
+          Calculate Installation Savings
+        </a>
         
-        <!-- Form 2: Secondary Feed Anchor -->
-        <form class="secureRouterForm" action="http://cloudflare.com" method="GET" target="_blank" rel="noreferrer noopener" referrerpolicy="no-referrer">
-          <button type="submit" class="action-button btn-secondary">Compare Regional Solar Rates</button>
-        </form>
+        <!-- Button 2 -->
+        <a href="http://cloudflare.com" target="_blank" rel="noreferrer noopener" class="action-button btn-secondary">
+          Compare Regional Solar Rates
+        </a>
         
       </div>
     </div>
   </div>
-
-  <!-- 🚀 Dynamic Multi-Device Timer Delay Script -->
-  <script>
-    const forms = document.querySelectorAll('.secureRouterForm');
-    
-    forms.forEach(form => {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const currentForm = this;
-        const targetButton = currentForm.querySelector('button');
-        
-        try {
-          window.localStorage.clear();
-          window.sessionStorage.clear();
-        } catch(error) {}
-        
-        const originalText = targetButton.innerText;
-        targetButton.innerText = "Verifying You Are Human Please Wait";
-        targetButton.style.opacity = "0.7";
-        targetButton.style.pointerEvents = "none";
-        
-        // 3.5 Seconds Hold for Timing Reset Automation
-        setTimeout(function() {
-          const nativeForm = Object.getPrototypeOf(currentForm).submit;
-          nativeForm.call(currentForm);
-          
-          setTimeout(function() {
-            targetButton.innerText = originalText;
-            targetButton.style.opacity = "1";
-            targetButton.style.pointerEvents = "auto";
-          }, 1000);
-        }, 3500); // Exact 3.5 Seconds Delay active!
-      });
-    });
-  </script>
 
 </body>
 </html>
